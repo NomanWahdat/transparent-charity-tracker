@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Local apps
     'users',
     'charities',
+    
     'campaigns',
     'donations',
     'expenses',
@@ -84,15 +85,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'charity_tracker.wsgi.application'
 ASGI_APPLICATION = 'charity_tracker.asgi.application'
 
-# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='charity_tracker'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default='postgres'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'NAME': 'transparent_charity_tracker',
+        'USER': 'postgres',           # ← Changed
+        'PASSWORD': 'postgres',       # ← Changed
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
